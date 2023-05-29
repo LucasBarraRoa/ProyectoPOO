@@ -74,8 +74,8 @@ public class InventarioLetras {
 		// retorna ' ' si el char ingresado no existe en el alfabeto.
 		if (!in(letra))
 			return ' ';
-		// retorna una condición especial si la letra es x, y o z, pasando de vuelta a los abc.
-		if ("abc".contains(String.valueOf(letra))) {
+		// retorna una condición especial si la letra es a, b o c, pasando de vuelta a los xyz.
+		if ("abc".contains(String.valueOf(letra).toLowerCase())) {
 			return separado[indice(letra) - cambio + largoInv].charAt(0);
 		}
 		// de otra manera, retorna el caracter en separado[] en el índice de la letra + cambio, (3 por default).
@@ -104,7 +104,7 @@ public class InventarioLetras {
 		// recorriendo cada letra de la palabra ingresada:
 		for (String letra : palabra.split("")) {
 			// implementa desencriptarCesar que retorna el caracter ingresado, y es añadido al String de resultado.
-			encriptado += encriptarCesar(letra.charAt(0));
+			encriptado += desencriptarCesar(letra.charAt(0));
 		}
 		// print para mostrar el desencriptado.
 		System.out.println("La palabra [" + palabra + "] desencriptada "+ valor + " veces es: [" + encriptado + "]");
