@@ -102,11 +102,11 @@ public class Main {
 				} // dependiendo de la combinación, pasará encriptar o desencriptar.
 				if (opcion2 == 1 && opcion3 == 1) 
 					new InventarioLetras().encriptarPalabra(aux, opcion4);
-				if (opcion2 == 1 && opcion3 == 1) 
+				else if (opcion2 == 1 && opcion3 == 1) 
 					new InventarioLetrasEsp().encriptarPalabra(aux, opcion4);
-				if (opcion2 == 2 && opcion3 == 1) 
+				else if (opcion2 == 2 && opcion3 == 1) 
 					new InventarioLetras().desencriptarPalabra(aux, opcion4);
-				if (opcion2 == 2 && opcion3 == 2) 
+				else if (opcion2 == 2 && opcion3 == 2) 
 					new InventarioLetrasEsp().desencriptarPalabra(aux, opcion4);
 			} // cuando ya tenemos al menos 1 inventario, otorga la posibilidad de usar varias operaciones de inventario.
 			else if (opcion == 3 && cont > 0) {
