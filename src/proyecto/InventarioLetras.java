@@ -63,23 +63,15 @@ public class InventarioLetras {
 		// retorna ' ' si el char ingresado no existe en el alfabeto.
 		if (!in(letra))
 			return ' ';
-		// retorna una condición especial si la letra es x, y o z, pasando de vuelta a los abc.
-		if ("xyz".contains(String.valueOf(letra).toLowerCase())) {
-			return separado[indice(letra) + cambio - largoInv].charAt(0);
-		}
-		// de otra manera, retorna el caracter en separado[] en el índice de la letra + cambio, (3 por default).
-		return separado[indice(letra) + cambio].charAt(0);
+		// retorna el char en el indice cambiado, siendo el resto del indice inicial + cambio (3 por default) entre el largo del inventario.
+		return separado[(indice(letra) + cambio) % separado.length].charAt(0);
 	}
 	public char desencriptarCesar(char letra) {
 		// retorna ' ' si el char ingresado no existe en el alfabeto.
 		if (!in(letra))
 			return ' ';
-		// retorna una condición especial si la letra es a, b o c, pasando de vuelta a los xyz.
-		if ("abc".contains(String.valueOf(letra).toLowerCase())) {
-			return separado[indice(letra) - cambio + largoInv].charAt(0);
-		}
-		// de otra manera, retorna el caracter en separado[] en el índice de la letra + cambio, (3 por default).
-		return separado[indice(letra) - cambio].charAt(0);
+		// retorna el char del indice cambiado, siendo sumado además por el largo, y dividido entre este, además de restado que es el cambio (3 por default).
+		return separado[(indice(letra) - cambio + separado.length) % separado.length].charAt(0);
 	}
 	public void encriptarPalabra(String palabra, int valor) {
 		// String encriptado de resultado.
